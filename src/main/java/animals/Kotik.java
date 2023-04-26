@@ -1,8 +1,7 @@
 package animals;
 
-public class Kotik {
+public class Kotik extends Carnivorous implements Run, Swim, Voice {
     private String name;
-    private int satiety;
     private int weight;//в граммах
     private String voice;
     private static final int METHODS = 5;
@@ -154,5 +153,15 @@ public class Kotik {
             }
         }
         return actions;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Котик бежит");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Котик плывет");
     }
 }

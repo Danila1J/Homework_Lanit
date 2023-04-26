@@ -1,6 +1,6 @@
 package animals;
 
-public class Duck extends Carnivorous implements Swim, Fly, Voice, Run {
+public class Duck extends Herbivore implements Swim, Fly, Voice, Run {
 
     @Override
     public void fly() {

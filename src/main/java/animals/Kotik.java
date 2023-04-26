@@ -2,7 +2,6 @@ package animals;
 
 public class Kotik extends Carnivorous implements Run, Swim, Voice {
     private String name;
-    private int satiety;
     private int weight;//в граммах
     private String voice;
     private static final int METHODS = 5;

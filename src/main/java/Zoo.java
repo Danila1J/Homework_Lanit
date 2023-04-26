@@ -18,10 +18,10 @@ public class Zoo {
         Rabbit rabbit = new Rabbit();//Herbivore
         Hamster hamster = new Hamster();//Herbivore
 
-        cow.eat(grass);
-        cow.eat(meat);
-        fish.eat(grass);
-        fish.eat(meat);
+        worker.feed(cow,grass);
+        worker.feed(cow,meat);
+        worker.feed(fish,grass);
+        worker.feed(fish,meat);
 
         System.out.println(cow.getVoice());
         //System.out.println(fish.getVoice()); //Ошибка!!!

@@ -19,6 +19,9 @@ public class Application {
     }
 
     private static boolean compareVoice(Kotik kotik1, Kotik kotik2) {
+        if (kotik1 == null || kotik2 == null) {
+            return false;
+        }
         return kotik1.getVoice().equals(kotik2.getVoice());
     }
 }

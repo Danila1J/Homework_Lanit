@@ -2,23 +2,23 @@ package animals;
 
 import model.Size;
 
-public class Rabbit extends Herbivore implements Run, Voice {
-    public Rabbit(String name) {
+public class Wolf extends Carnivorous implements Run, Voice {
+    public Wolf(String name) {
         super(name);
     }
 
     @Override
     public void run() {
-        System.out.println("Кролик бежит");
+        System.out.println("Волк бежит");
     }
 
     @Override
     public String getVoice() {
-        return "Фыр-фыр";
+        return "Ррррр";
     }
 
     @Override
     public Size getSize() {
-        return Size.SMALL;
+        return Size.LARGE;
     }
 }

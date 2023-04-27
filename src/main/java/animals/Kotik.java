@@ -1,7 +1,8 @@
 package animals;
 
+import model.Size;
+
 public class Kotik extends Carnivorous implements Run, Swim, Voice {
-    private String name;
     private int weight;//в граммах
     private String voice;
     private static final int METHODS = 5;
@@ -11,14 +12,7 @@ public class Kotik extends Carnivorous implements Run, Swim, Voice {
         return count;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Override
     public int getSatiety() {
         return satiety;
     }
@@ -43,13 +37,13 @@ public class Kotik extends Carnivorous implements Run, Swim, Voice {
         this.voice = voice;
     }
 
-    public Kotik() {
+    public Kotik(String name) {
+        super(name);
         count++;
     }
 
     public Kotik(String name, String voice, int satiety, int weight) {
-        count++;
-        this.name = name;
+        this(name);
         this.voice = voice;
         this.satiety = satiety;
         this.weight = weight;
@@ -57,55 +51,55 @@ public class Kotik extends Carnivorous implements Run, Swim, Voice {
 
     public boolean play() {
         if (satiety > 0) {
-            System.out.println("Котик " + name + " играет.");
+            System.out.println("Котик " + super.getName() + " играет.");
             satiety--;
             return true;
         } else {
-            System.out.println("Котик " + name + " хочет есть.");
+            System.out.println("Котик " + super.getName() + " хочет есть.");
             return false;
         }
     }
 
     public boolean sleep() {
         if (satiety > 0) {
-            System.out.println("Котик " + name + " спит.");
+            System.out.println("Котик " + super.getName() + " спит.");
             satiety--;
             return true;
         } else {
-            System.out.println("Котик " + name + " хочет есть.");
+            System.out.println("Котик " + super.getName() + " хочет есть.");
             return false;
         }
     }
 
     public boolean wash() {
         if (satiety > 0) {
-            System.out.println("Котик " + name + " моется.");
+            System.out.println("Котик " + super.getName() + " моется.");
             satiety--;
             return true;
         } else {
-            System.out.println("Котик " + name + " хочет есть.");
+            System.out.println("Котик " + super.getName() + " хочет есть.");
             return false;
         }
     }
 
     public boolean walk() {
         if (satiety > 0) {
-            System.out.println("Котик " + name + " гуляет.");
+            System.out.println("Котик " + super.getName() + " гуляет.");
             satiety--;
             return true;
         } else {
-            System.out.println("Котик " + name + " хочет есть.");
+            System.out.println("Котик " + super.getName() + " хочет есть.");
             return false;
         }
     }
 
     public boolean hunt() {
         if (satiety > 0) {
-            System.out.println("Котик " + name + " охотится.");
+            System.out.println("Котик " + super.getName() + " охотится.");
             satiety--;
             return true;
         } else {
-            System.out.println("Котик " + name + " хочет есть.");
+            System.out.println("Котик " + super.getName() + " хочет есть.");
             return false;
         }
     }
@@ -163,5 +157,10 @@ public class Kotik extends Carnivorous implements Run, Swim, Voice {
     @Override
     public void swim() {
         System.out.println("Котик плывет");
+    }
+
+    @Override
+    public Size getSize() {
+        return Size.SMALL;
     }
 }

@@ -7,7 +7,7 @@ import model.Size;
 public abstract class Animal {
     protected int satiety;
 
-    private String name;
+    private final String name;
 
     public String getName() {
         return name;

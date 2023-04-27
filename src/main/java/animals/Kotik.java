@@ -12,6 +12,7 @@ public class Kotik extends Carnivorous implements Run, Swim, Voice {
         return count;
     }
 
+    @Override
     public int getSatiety() {
         return satiety;
     }

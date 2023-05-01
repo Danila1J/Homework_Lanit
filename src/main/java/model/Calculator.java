@@ -6,9 +6,12 @@ public class Calculator {
         String operator = params[0];
         double value1;
         double value2;
-        // todo: доработать код, чтобы все негативные тесты проходили успешно
-        value1 = Double.parseDouble(params[1]);
-        value2 = Double.parseDouble(params[2]);
+        try {
+            value1 = Double.parseDouble(params[1]);
+            value2 = Double.parseDouble(params[2]);
+        } catch (Exception e) {
+            throw new CalculatorException("Некорректный формат числа");
+        }
         double result = calculate(operator, value1, value2);
         if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {
             throw new CalculatorException("Превышен порог значений");

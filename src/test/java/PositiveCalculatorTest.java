@@ -15,9 +15,9 @@ public class PositiveCalculatorTest {
                 {"+", "-1", "0", -1.0},
                 {"+", "-1", "-1", -2.0},
                 {"+", "1.0", "2.0", 3.0},
-                {"+", Integer.toString(Integer.MAX_VALUE - 1), "1", Integer.MAX_VALUE},
+                {"+", Integer.toString(Integer.MAX_VALUE - 1), "1", Integer.MAX_VALUE},// результат вычислений находится на верхней границе
                 {"+", Integer.toString(Integer.MAX_VALUE), Integer.toString(Integer.MIN_VALUE), -1.0},
-                {"-", Integer.toString(Integer.MIN_VALUE+1), "1", Integer.MIN_VALUE},
+                {"-", Integer.toString(Integer.MIN_VALUE + 1), "1", Integer.MIN_VALUE},// результат вычислений находится на нижней границе
         };
     }
 

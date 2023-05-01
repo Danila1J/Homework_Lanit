@@ -3,14 +3,19 @@ package model;
 public class Calculator {
 
     public static String execute(String[] params) {
-        String operator = params[0];
+        String operator;
         double value1;
         double value2;
         try {
+            operator = new String(params[0]);
             value1 = Double.parseDouble(params[1]);
             value2 = Double.parseDouble(params[2]);
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
+            throw new CalculatorException("Не задан оператор");
+        } catch (NumberFormatException e) {
             throw new CalculatorException("Некорректный формат числа");
+        } catch (Exception e) {
+            throw new CalculatorException();
         }
         double result = calculate(operator, value1, value2);
         if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {

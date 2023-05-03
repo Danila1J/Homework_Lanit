@@ -190,6 +190,8 @@ public class Ticket {
         this.status=Status.OPEN.getCode();
         this.priority=2;
         this.queue=1;
+        this.created="2023-05-03T11:20:55.218005";
+        this.modified="2023-05-03T11:20:55.218005";
     }
 
     public Ticket(String title, Integer status, Integer priority, Integer queue) {
@@ -197,6 +199,8 @@ public class Ticket {
         this.status=status;
         this.priority=priority;
         this.queue = queue;
+        this.created="2023-05-03T11:20:55.218005";
+        this.modified="2023-05-03T11:20:55.218005";
     }
 
     @Override

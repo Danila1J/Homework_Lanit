@@ -201,20 +201,13 @@ public class Ticket {
 
     }
 
-    public Ticket(String title, Integer status, Integer priority, Integer queue) {
-        this.title = title;
-        this.status=status;
-        this.priority=priority;
-        this.queue = queue;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
         return Objects.equals(id, ticket.id) &&
-                Objects.equals(due_date, ticket.due_date) &&
+                Objects.equals(due_date.substring(0,10), ticket.due_date.substring(0,10)) &&
                 Objects.equals(title, ticket.title) &&
                 Objects.equals(created, ticket.created) &&
                 Objects.equals(modified, ticket.modified) &&

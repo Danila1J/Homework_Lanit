@@ -57,7 +57,10 @@ public abstract class BaseTest {
 
 
     protected Ticket buildNewTicket(Status status, int priority) {
-        return new Ticket("Название_Тикета", status.getCode(), priority, 1);
+        Ticket newTicket=new Ticket();
+        newTicket.setStatus(status.getCode());
+        newTicket.setPriority(priority);
+        return newTicket;
     }
 
     protected Ticket createTicket(Ticket ticket) {

@@ -1,18 +1,34 @@
 package api;
 
+import model.Status;
 import model.Ticket;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/** Создание и проверка тикета */
+import static io.restassured.RestAssured.given;
+
+/**
+ * Создание и проверка тикета
+ */
 public class CreateTicketTest extends BaseTest {
 
     @Test
     public void createTicketTest() {
-        // todo: создать тикет и проверить, что он находится в системе
+        Ticket newTicket = createTicket(buildNewTicket(Status.OPEN, 2));
+        Ticket getTicket = getTicket(newTicket.getId());
+        Assert.assertEquals(newTicket, getTicket);
     }
 
     protected Ticket getTicket(int id) {
-        // todo: отправить HTTP запрос на получение тикета по его id
-        return null;
+        Ticket getTicket = given()
+                .header("Authorization", "Token " + System.getProperty("api.key"))
+                .pathParam("id", id)
+                .when()
+                .get("/api/tickets/{id}")
+                .then()
+                .statusCode(200)
+                .extract().body()
+                .as(Ticket.class);
+        return getTicket;
     }
 }

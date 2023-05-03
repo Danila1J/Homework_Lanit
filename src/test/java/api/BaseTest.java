@@ -32,7 +32,6 @@ public abstract class BaseTest {
         }
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setBaseUri(baseUri) // задаём базовый адрес каждого ресурса
-                .addHeader("api_key", System.getProperty("api.key")) // задаём заголовок с токеном для авторизации
                 .setAccept(ContentType.JSON) // задаём заголовок accept
                 .setContentType(ContentType.JSON) // задаём заголовок content-type
                 .log(LogDetail.ALL) // дополнительная инструкция полного логгирования для RestAssured

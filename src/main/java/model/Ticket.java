@@ -185,6 +185,10 @@ public class Ticket {
         this.mergedTo = mergedTo;
     }
 
+    public Ticket(){
+
+    }
+
     public Ticket(String title, Integer status, Integer priority, Integer queue) {
         this.title = title;
         this.status=status;

@@ -21,7 +21,7 @@ public class UpdateTicketTest extends BaseTest {
 
     private void updateTicketNegative(Ticket ticket) {
         given()
-                .header("Authorization", "Token " + System.getProperty("api.key"))
+                .header("Authorization", "Token " + login().getToken())
                 .body(ticket)
                 .pathParam("id", ticket.getId())
                 .when()

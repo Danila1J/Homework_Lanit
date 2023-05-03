@@ -21,7 +21,7 @@ public class CreateTicketTest extends BaseTest {
 
     protected Ticket getTicket(int id) {
         Ticket getTicket = given()
-                .header("Authorization", "Token " + System.getProperty("api.key"))
+                .header("Authorization", "Token " + login().getToken())
                 .pathParam("id", id)
                 .when()
                 .get("/api/tickets/{id}")

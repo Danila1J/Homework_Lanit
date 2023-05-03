@@ -9,25 +9,25 @@ import java.util.Objects;
  */
 public class Ticket {
     private Integer id;
-    private String dueDate;
+    private String due_date;
     @JsonIgnore
-    private String assignedTo;
+    private String assigned_to;
     private String title;
     private String created;
     private String modified;
-    private String submitterEmail;
+    private String submitter_email;
     private Integer status;
-    private Boolean onHold;
+    private Boolean on_hold;
     private String description;
     private String resolution;
     private Integer priority;
-    private String lastEscalation;
-    private String secretKey;
+    private String last_escalation;
+    private String secret_key;
     private Integer queue;
     @JsonIgnore
-    private Integer kbItem;
+    private Integer kbitem;
     @JsonIgnore
-    private Integer mergedTo;
+    private Integer merged_to;
 
     public Integer getId() {
         return id;
@@ -37,20 +37,20 @@ public class Ticket {
         this.id = id;
     }
 
-    public String getDueDate() {
-        return dueDate;
+    public String getDue_date() {
+        return due_date;
     }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
+    public void setDue_date(String due_date) {
+        this.due_date = due_date;
     }
 
-    public String getAssignedTo() {
-        return assignedTo;
+    public String getAssigned_to() {
+        return assigned_to;
     }
 
-    public void setAssignedTo(String assignedTo) {
-        this.assignedTo = assignedTo;
+    public void setAssigned_to(String assigned_to) {
+        this.assigned_to = assigned_to;
     }
 
     public String getTitle() {
@@ -77,12 +77,12 @@ public class Ticket {
         this.modified = modified;
     }
 
-    public String getSubmitterEmail() {
-        return submitterEmail;
+    public String getSubmitter_email() {
+        return submitter_email;
     }
 
-    public void setSubmitterEmail(String submitterEmail) {
-        this.submitterEmail = submitterEmail;
+    public void setSubmitter_email(String submitter_email) {
+        this.submitter_email = submitter_email;
     }
 
     public Integer getStatus() {
@@ -93,12 +93,12 @@ public class Ticket {
         this.status = status;
     }
 
-    public Boolean getOnHold() {
-        return onHold;
+    public Boolean getOn_hold() {
+        return on_hold;
     }
 
-    public void setOnHold(Boolean onHold) {
-        this.onHold = onHold;
+    public void setOn_hold(Boolean on_hold) {
+        this.on_hold = on_hold;
     }
 
     public String getDescription() {
@@ -125,20 +125,20 @@ public class Ticket {
         this.priority = priority;
     }
 
-    public String getLastEscalation() {
-        return lastEscalation;
+    public String getLast_escalation() {
+        return last_escalation;
     }
 
-    public void setLastEscalation(String lastEscalation) {
-        this.lastEscalation = lastEscalation;
+    public void setLast_escalation(String last_escalation) {
+        this.last_escalation = last_escalation;
     }
 
-    public String getSecretKey() {
-        return secretKey;
+    public String getSecret_key() {
+        return secret_key;
     }
 
-    public void setSecretKey(String secretKey) {
-        this.secretKey = secretKey;
+    public void setSecret_key(String secret_key) {
+        this.secret_key = secret_key;
     }
 
     public Integer getQueue() {
@@ -149,40 +149,40 @@ public class Ticket {
         this.queue = queue;
     }
 
-    public Integer getKbItem() {
-        return kbItem;
+    public Integer getKbitem() {
+        return kbitem;
     }
 
-    public void setKbItem(Integer kbItem) {
-        this.kbItem = kbItem;
+    public void setKbitem(Integer kbitem) {
+        this.kbitem = kbitem;
     }
 
-    public Integer getMergedTo() {
-        return mergedTo;
+    public Integer getMerged_to() {
+        return merged_to;
     }
 
-    public void setMergedTo(Integer mergedTo) {
-        this.mergedTo = mergedTo;
+    public void setMerged_to(Integer merged_to) {
+        this.merged_to = merged_to;
     }
 
-    public Ticket(Integer id, String dueDate, String assignedTo, String title, String created, String modified, String submitterEmail, Integer status, Boolean onHold, String description, String resolution, Integer priority, String lastEscalation, String secretKey, Integer queue, Integer kbItem, Integer mergedTo) {
+    public Ticket(Integer id, String due_date, String assigned_to, String title, String created, String modified, String submitter_email, Integer status, Boolean on_hold, String description, String resolution, Integer priority, String last_escalation, String secret_key, Integer queue, Integer kbitem, Integer merged_to) {
         this.id = id;
-        this.dueDate = dueDate;
-        this.assignedTo = assignedTo;
+        this.due_date = due_date;
+        this.assigned_to = assigned_to;
         this.title = title;
         this.created = created;
         this.modified = modified;
-        this.submitterEmail = submitterEmail;
+        this.submitter_email = submitter_email;
         this.status = status;
-        this.onHold = onHold;
+        this.on_hold = on_hold;
         this.description = description;
         this.resolution = resolution;
         this.priority = priority;
-        this.lastEscalation = lastEscalation;
-        this.secretKey = secretKey;
+        this.last_escalation = last_escalation;
+        this.secret_key = secret_key;
         this.queue = queue;
-        this.kbItem = kbItem;
-        this.mergedTo = mergedTo;
+        this.kbitem = kbitem;
+        this.merged_to = merged_to;
     }
 
     public Ticket(){
@@ -209,26 +209,26 @@ public class Ticket {
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
         return Objects.equals(id, ticket.id) &&
-                Objects.equals(dueDate, ticket.dueDate) &&
+                Objects.equals(due_date, ticket.due_date) &&
                 Objects.equals(title, ticket.title) &&
                 Objects.equals(created, ticket.created) &&
                 Objects.equals(modified, ticket.modified) &&
-                Objects.equals(submitterEmail, ticket.submitterEmail) &&
+                Objects.equals(submitter_email, ticket.submitter_email) &&
                 Objects.equals(status, ticket.status) &&
-                Objects.equals(onHold, ticket.onHold) &&
+                Objects.equals(on_hold, ticket.on_hold) &&
                 Objects.equals(description, ticket.description) &&
                 Objects.equals(resolution, ticket.resolution) &&
                 Objects.equals(priority, ticket.priority) &&
-                Objects.equals(lastEscalation, ticket.lastEscalation) &&
-                Objects.equals(secretKey, ticket.secretKey) &&
+                Objects.equals(last_escalation, ticket.last_escalation) &&
+                Objects.equals(secret_key, ticket.secret_key) &&
                 Objects.equals(queue, ticket.queue) &&
-                Objects.equals(kbItem, ticket.kbItem) &&
-                Objects.equals(assignedTo, ticket.assignedTo) &&
-                Objects.equals(mergedTo, ticket.mergedTo);
+                Objects.equals(kbitem, ticket.kbitem) &&
+                Objects.equals(assigned_to, ticket.assigned_to) &&
+                Objects.equals(merged_to, ticket.merged_to);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dueDate, assignedTo, title, created, modified, submitterEmail, status, onHold, description, resolution, priority, lastEscalation, secretKey, queue, kbItem, mergedTo);
+        return Objects.hash(id, due_date, assigned_to, title, created, modified, submitter_email, status, on_hold, description, resolution, priority, last_escalation, secret_key, queue, kbitem, merged_to);
     }
 }

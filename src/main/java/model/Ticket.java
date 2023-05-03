@@ -186,12 +186,19 @@ public class Ticket {
     }
 
     public Ticket(){
+        this.due_date="2023-05-03";
         this.title="Название_Тикета";
-        this.status=Status.OPEN.getCode();
-        this.priority=2;
-        this.queue=1;
         this.created="2023-05-03T11:20:55.218005";
         this.modified="2023-05-03T11:20:55.218005";
+        this.submitter_email="user@example.com";
+        this.status=Status.OPEN.getCode();
+        this.on_hold=true;
+        this.description="string";
+        this.resolution="string";
+        this.priority=2;
+        this.secret_key="string";
+        this.queue=1;
+
     }
 
     public Ticket(String title, Integer status, Integer priority, Integer queue) {
@@ -199,8 +206,6 @@ public class Ticket {
         this.status=status;
         this.priority=priority;
         this.queue = queue;
-        this.created="2023-05-03T11:20:55.218005";
-        this.modified="2023-05-03T11:20:55.218005";
     }
 
     @Override

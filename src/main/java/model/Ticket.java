@@ -186,7 +186,10 @@ public class Ticket {
     }
 
     public Ticket(){
-
+        this.title="Название_Тикета";
+        this.status=Status.OPEN.getCode();
+        this.priority=2;
+        this.queue=1;
     }
 
     public Ticket(String title, Integer status, Integer priority, Integer queue) {

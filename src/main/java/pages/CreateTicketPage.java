@@ -37,6 +37,9 @@ public class CreateTicketPage extends HelpdeskBasePage {
         PageFactory.initElements(driver, this);
     }
 
+    public CreateTicketPage(){
+    }
+
     @Step("Создать тикет")
     public CreateTicketPage createTicket(Ticket ticket) {
         setInputProblem(ticket.getTitle());

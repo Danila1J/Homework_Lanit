@@ -38,6 +38,7 @@ public class CreateTicketPage extends HelpdeskBasePage {
     }
 
     public CreateTicketPage(){
+        PageFactory.initElements(AbstractPage.driver,this);
     }
 
     @Step("Создать тикет")

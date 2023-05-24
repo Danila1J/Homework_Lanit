@@ -1,0 +1,8 @@
+{
+  "title": "Новый тикет",
+  "submitter_email": "user@example.com",
+  "status": 1,
+  "description": "Описание",
+  "priority": 2,
+  "queue": 1
+}

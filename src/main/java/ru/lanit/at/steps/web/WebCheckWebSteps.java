@@ -29,6 +29,15 @@ public class WebCheckWebSteps extends AbstractWebSteps {
         LOGGER.info("элемент '{}' содержит текст '{}'", elementName, text);
     }
 
+    @Когда("проверить что элемент {string} содержит текст {string}")
+    public void textAppearOnTheElement(String elementName, String text) {
+        SelenideElement element = pageManager
+                .getCurrentPage()
+                .getElement(elementName);
+        WebChecks.elementTextContainsExpectedText(element, text,10);
+        LOGGER.info("элемент '{}' содержит текст '{}'", elementName, text);
+    }
+
 
     /**
      * проверка присутствия текста на странице
@@ -40,6 +49,18 @@ public class WebCheckWebSteps extends AbstractWebSteps {
         WebChecks.textVisibleOnPage(text, null);
         LOGGER.info("на странице '{}' имеется текст '{}'", pageManager.getCurrentPage().name(), text);
     }
+
+    /**
+     * проверка присутствия текста на странице
+     *
+     * @param text текст
+     */
+    @Когда("на странице присутствует подстрока {string}")
+    public void textSubstrungAppearOnThePage(String text) {
+        WebChecks.textSubstringVisibleOnPage(text,null);
+        LOGGER.info("на странице '{}' имеется текст '{}'", pageManager.getCurrentPage().name(), text);
+    }
+
 
     /**
      * проверка отсутствия текста на странице

@@ -10,6 +10,7 @@ import ru.lanit.at.actions.WebActions;
 import ru.lanit.at.utils.Sleep;
 import ru.lanit.at.utils.web.pagecontext.PageManager;
 
+import java.io.File;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -36,6 +37,14 @@ public class WebActionWebSteps extends AbstractWebSteps {
         LOGGER.info("клик на элемент по тексту '{}'", text);
     }
 
+    @Когда("кликнуть на элемент содержащий текст {string}")
+    public void clickElementWithSubstringText(String text) {
+        $(Selectors.withText(text))
+                .shouldBe(Condition.visible)
+                .click();
+        LOGGER.info("клик на элемент по тексту '{}'", text);
+    }
+
     @Если("кликнуть на элемент {string}")
     public void clickOnElement(String elementName) {
         SelenideElement element = pageManager
@@ -45,6 +54,17 @@ public class WebActionWebSteps extends AbstractWebSteps {
                 .shouldBe(Condition.visible, Duration.ofSeconds(10))
                 .click();
         LOGGER.info("клик на элемент '{}'", elementName);
+    }
+
+    @Если("выбрать в раскрывающемся списке {string} c значением {string}")
+    public void selectDropDownValue(String elementName, String value) {
+        SelenideElement element = pageManager
+                .getCurrentPage()
+                .getElement(elementName);
+        element
+                .shouldBe(Condition.enabled, Duration.ofSeconds(60));
+        element.selectOption(value);
+        LOGGER.info("в выпадющий список '{}' введено значение '{}'", element, value);
     }
 
     @Если("установить чекбокс на элементе {string}")
@@ -117,6 +137,24 @@ public class WebActionWebSteps extends AbstractWebSteps {
                 .shouldBe(Condition.visible, Duration.ofSeconds(60))
                 .setValue(value);
         LOGGER.info("в поле '{}' введено значение '{}'", field, value);
+    }
+
+    /**
+     * Добавление файла в элемент
+     *
+     * @param field - наименование элемента
+     * @param value - значение
+     */
+    @Когда("добавить в поле {string} файл {string}")
+    public void fillTheFieldFile(String field, String value) {
+        value = replaceVars(value, getStorage());
+        SelenideElement fieldElement = pageManager
+                .getCurrentPage()
+                .getElement(field);
+        fieldElement
+                .shouldBe(Condition.visible, Duration.ofSeconds(60))
+                .uploadFile(new File(value));
+        LOGGER.info("в поле '{}' добавлен файл '{}'", field, value);
     }
 
     /**

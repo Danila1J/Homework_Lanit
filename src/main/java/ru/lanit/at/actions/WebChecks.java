@@ -112,6 +112,15 @@ public class WebChecks {
     }
 
     /**
+     * Проверяет, что на странице имеется подстрока
+     */
+    public static void textSubstringVisibleOnPage(String text, Integer timeoutSeconds) {
+        int timeout = getTimeoutSeconds(timeoutSeconds);
+        $(Selectors.withText(text))
+                .shouldBe(Condition.visible, Duration.ofSeconds(timeout));
+    }
+
+    /**
      * Проверяет, что на странице отсутствует текст
      */
     public static void textAbsentOnPage(String text, Integer timeoutSeconds) {
